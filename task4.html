@@ -1,178 +1,1246 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>V. Supriya - Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <title>V. Supriya | Portfolio</title>
+
+    <meta name="description"
+        content="V. Supriya - B.Tech Bioinformatics student skilled in Python, Java, Data Analysis, Web Development and Bioinformatics.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
     <style>
-        /* ===== Global Styles ===== */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Roboto', sans-serif; line-height: 1.6; color: #333; scroll-behavior: smooth; }
-        a { text-decoration: none; color: inherit; }
-        img { max-width: 100%; border-radius: 10px; }
-        section { padding: 80px 20px; }
-        .container { max-width: 1100px; margin: auto; }
 
-        /* ===== Header ===== */
-        header {
-            background: linear-gradient(135deg, #B39DDB, #81D4FA); /* Lavender to sky blue */
-            color: white;
-            padding: 40px 20px;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f7f8fc;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            width: 100%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 18px 7%;
+
+            background: rgba(255, 255, 255, 0.97);
+
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: #5b4bdb;
+        }
+
+        nav ul {
+            list-style: none;
+
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 24px;
+        }
+
+        nav ul li a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #5b4bdb;
+        }
+
+
+        /* ================= GENERAL ================= */
+
+        section {
+            width: 100%;
+            padding: 80px 7%;
+        }
+
+        .container {
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        .section-title {
             text-align: center;
+            font-size: 36px;
+            margin-bottom: 10px;
         }
-        header h1 { font-size: 3em; margin-bottom: 10px; }
-        header p { font-size: 1.2em; margin-bottom: 20px; }
-        header img { width: 180px; height: 180px; border-radius: 50%; border: 4px solid white; margin-bottom: 20px; }
 
-        /* ===== Navigation ===== */
-        nav { position: sticky; top: 0; background-color: white; box-shadow: 0px 2px 8px rgba(0,0,0,0.1); z-index: 100; }
-        nav .container { display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; }
-        nav .logo { font-weight: bold; font-size: 1.5em; color: #9575CD; } /* Lavender */
-        nav ul { list-style: none; display: flex; }
-        nav ul li { margin-left: 20px; }
-        nav ul li a { color: #333; font-weight: 500; transition: color 0.3s; }
-        nav ul li a:hover { color: #81D4FA; } /* Sky blue on hover */
-
-        /* ===== About Section ===== */
-        #about { background-color: #EDE7F6; } /* Soft lavender background */
-        #about h2 { text-align: center; margin-bottom: 40px; font-size: 2.5em; color: #9575CD; }
-        .about-content { display: flex; flex-wrap: wrap; gap: 40px; align-items: center; justify-content: center; }
-        .about-content .bio { flex: 1 1 300px; }
-        .about-content .bio h3 { margin-bottom: 15px; color: #B39DDB; } /* Lavender headings */
-        .about-content .bio p { margin-bottom: 10px; }
-
-        /* ===== Skills Section ===== */
-        #skills h2 { text-align: center; margin-bottom: 40px; font-size: 2.5em; color: #9575CD; }
-        .skills-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
-        .skill { background-color: #fff; border-radius: 15px; padding: 20px 30px; box-shadow: 0px 8px 20px rgba(0,0,0,0.1); font-weight: bold; color: #9575CD; transition: transform 0.3s; }
-        .skill:hover { transform: translateY(-5px); box-shadow: 0px 10px 25px rgba(79,195,247,0.5); }
-
-        /* ===== Projects Section ===== */
-        #projects { background-color: #E1F5FE; } /* Light sky blue background */
-        #projects h2 { text-align: center; margin-bottom: 40px; font-size: 2.5em; color: #9575CD; }
-        .projects-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
-        .project { background-color: #fff; border-radius: 15px; box-shadow: 0px 10px 20px rgba(0,0,0,0.15); overflow: hidden; width: 300px; transition: transform 0.3s; }
-        .project img { width: 100%; }
-        .project-content { padding: 20px; }
-        .project-content h3 { margin-bottom: 10px; color: #9575CD; }
-        .project-content p { font-size: 0.95em; }
-        .project:hover { transform: translateY(-5px); box-shadow: 0px 10px 25px rgba(79,195,247,0.5); }
-
-        /* ===== Contact Section ===== */
-        #contact { background-color: #EDE7F6; }
-        #contact h2 { text-align: center; margin-bottom: 40px; font-size: 2.5em; color: #9575CD; }
-        #contact p { text-align: center; font-size: 1.1em; color: #333; }
-        #contact a { color: #81D4FA; font-weight: bold; }
-
-        /* ===== Footer ===== */
-        footer { background-color: #9575CD; color: white; text-align: center; padding: 20px 0; }
-
-        /* ===== Responsive ===== */
-        @media(max-width:768px){
-            .about-content { flex-direction: column; }
-            nav .container { flex-direction: column; gap: 10px; }
-            nav ul { flex-wrap: wrap; justify-content: center; }
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 45px;
         }
+
+
+        /* ================= HOME ================= */
+
+        #home {
+            min-height: 88vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            background: linear-gradient(
+                135deg,
+                #eeeaff,
+                #e8f4ff
+            );
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(42px, 7vw, 72px);
+            margin-bottom: 15px;
+        }
+
+        .hero-content h1 span {
+            color: #5b4bdb;
+        }
+
+        .hero-content h2 {
+            font-size: clamp(20px, 3vw, 30px);
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            color: #555;
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+
+            padding: 13px 25px;
+
+            border-radius: 8px;
+
+            font-weight: 600;
+
+            text-decoration: none;
+
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #5b4bdb;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #4738bf;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #5b4bdb;
+            border: 2px solid #5b4bdb;
+        }
+
+        .btn-secondary:hover {
+            background: #5b4bdb;
+            color: white;
+        }
+
+
+        /* ================= ABOUT ================= */
+
+        .about-box {
+            max-width: 850px;
+            margin: auto;
+
+            background: white;
+
+            padding: 35px;
+
+            border-radius: 15px;
+
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.06);
+        }
+
+        .about-box p {
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .about-box p:last-child {
+            margin-bottom: 0;
+        }
+
+
+        /* ================= SKILLS ================= */
+
+        .skills-list {
+            max-width: 950px;
+            margin: auto;
+
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            gap: 12px;
+        }
+
+        .skill {
+            background: white;
+
+            border: 1px solid #ddd;
+
+            padding: 10px 18px;
+
+            border-radius: 25px;
+
+            font-weight: 500;
+
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            background: #5b4bdb;
+            color: white;
+            border-color: #5b4bdb;
+        }
+
+
+        /* ================= EXPERIENCE ================= */
+
+        .experience-box {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .experience-card {
+            background: white;
+
+            padding: 30px;
+
+            margin-bottom: 22px;
+
+            border-radius: 15px;
+
+            border-left: 5px solid #5b4bdb;
+
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .experience-card h3 {
+            margin-bottom: 5px;
+        }
+
+        .experience-card h4 {
+            color: #5b4bdb;
+            margin-bottom: 15px;
+        }
+
+        .experience-card p {
+            color: #555;
+        }
+
+
+        /* ================= PROJECTS ================= */
+
+        .projects-grid {
+
+            width: 100%;
+
+            display: grid;
+
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+
+            gap: 25px;
+        }
+
+        .project-card {
+
+            background: white;
+
+            padding: 28px;
+
+            border-radius: 15px;
+
+            border: 1px solid #e5e5e5;
+
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+
+            min-height: 300px;
+
+            display: flex;
+            flex-direction: column;
+
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 12px 30px rgba(0, 0, 0, 0.10);
+        }
+
+        .project-number {
+            color: #5b4bdb;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            margin-bottom: 8px;
+        }
+
+        .project-card h3 {
+            font-size: 21px;
+
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            color: #666;
+
+            font-size: 15px;
+
+            margin-bottom: 18px;
+        }
+
+        .technology {
+            color: #555;
+
+            font-size: 13px;
+
+            margin-top: auto;
+
+            margin-bottom: 18px;
+        }
+
+        .project-link {
+            color: #5b4bdb;
+
+            font-weight: 600;
+
+            text-decoration: none;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+
+        /* ================= EDUCATION ================= */
+
+        #education {
+            background: #f1f3f9;
+        }
+
+        .education-card {
+            max-width: 800px;
+
+            margin: auto;
+
+            background: white;
+
+            padding: 35px;
+
+            text-align: center;
+
+            border-radius: 15px;
+
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .education-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .education-card p {
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+
+        /* ================= CONTACT ================= */
+
+        #contact {
+            text-align: center;
+
+            background: linear-gradient(
+                135deg,
+                #eeeaff,
+                #e8f4ff
+            );
+        }
+
+        .contact-text {
+            color: #555;
+
+            margin-bottom: 25px;
+        }
+
+        .email {
+            display: inline-block;
+
+            color: #5b4bdb;
+
+            font-weight: 600;
+
+            margin-bottom: 25px;
+        }
+
+        .contact-buttons {
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 15px;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #202124;
+
+            color: #ccc;
+
+            text-align: center;
+
+            padding: 25px;
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 800px) {
+
+            nav {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav ul {
+                justify-content: center;
+                gap: 14px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 60px 5%;
+            }
+
+        }
+
     </style>
+
 </head>
+
+
 <body>
 
-    <!-- ===== Navigation ===== -->
-    <nav>
-        <div class="container">
-            <div class="logo">V. Supriya</div>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav>
+
+    <div class="logo">
+        Supriya.
+    </div>
+
+    <ul>
+
+        <li>
+            <a href="#home">Home</a>
+        </li>
+
+        <li>
+            <a href="#about">About</a>
+        </li>
+
+        <li>
+            <a href="#skills">Skills</a>
+        </li>
+
+        <li>
+            <a href="#experience">Experience</a>
+        </li>
+
+        <li>
+            <a href="#projects">Projects</a>
+        </li>
+
+        <li>
+            <a href="#education">Education</a>
+        </li>
+
+        <li>
+            <a href="#contact">Contact</a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+
+<!-- =====================================================
+     HOME
+===================================================== -->
+
+<section id="home">
+
+    <div class="hero-content">
+
+        <h1>
+            Hi, I'm <span>V. Supriya</span>
+        </h1>
+
+        <h2>
+            Python Developer | Data Analysis | Web Development
+        </h2>
+
+        <p>
+            B.Tech Bioinformatics student passionate about building
+            practical software projects using Python, Java, data
+            analysis, automation and web technologies.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#projects" class="btn btn-primary">
+                View My Projects
+            </a>
+
+            <a
+                href="https://github.com/supriyavaddadi"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-secondary"
+            >
+                GitHub
+            </a>
+
+            <a
+                href="https://www.linkedin.com/in/vaddadi-supriya-b8b668337/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-secondary"
+            >
+                LinkedIn
+            </a>
+
         </div>
-    </nav>
 
-    <!-- ===== Home Section ===== -->
-    <header id="home">
-        <img src="https://via.placeholder.com/180" alt="V. Supriya Photo">
-        <h1>Hi, I'm V. Supriya</h1>
-        <p>Student and Learner passionate about Web Development and building interactive websites.</p>
-    </header>
+    </div>
 
-    <!-- ===== About Me Section ===== -->
-    <section id="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <div class="bio">
-                    <h3>Background</h3>
-                    <p>I am a student and an enthusiastic learner, exploring web development through practical projects.</p>
-                    <h3>Education</h3>
-                    <p>Currently pursuing studies while learning web development.</p>
-                    <h3>Experience</h3>
-                    <p>Web development intern at Prodigy Tech, working on interactive projects including Tic-Tac-Toe and Stopwatch apps.</p>
-                </div>
-                <div class="bio">
-                    <img src="https://via.placeholder.com/350x300" alt="About Me Image">
-                </div>
+</section>
+
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section id="about">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            About Me
+        </h2>
+
+        <p class="section-subtitle">
+            A little about my background and interests
+        </p>
+
+        <div class="about-box">
+
+            <p>
+                I am a B.Tech Bioinformatics student interested in
+                software development and technology. Along with my
+                academic background in bioinformatics, I am developing
+                practical skills in Python, Java, SQL and web development.
+            </p>
+
+            <p>
+                I enjoy building projects that solve practical problems,
+                including data analysis, file automation, web scraping,
+                web applications and management systems.
+            </p>
+
+            <p>
+                I have gained practical experience through internships
+                in Web Development and Java Full Stack Development.
+            </p>
+
+            <p>
+                My current focus is strengthening my programming skills,
+                building real-world projects and preparing for software
+                development opportunities.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SKILLS
+===================================================== -->
+
+<section id="skills">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Skills
+        </h2>
+
+        <p class="section-subtitle">
+            Technologies and tools I work with
+        </p>
+
+        <div class="skills-list">
+
+            <span class="skill">Python</span>
+            <span class="skill">Java</span>
+            <span class="skill">SQL</span>
+            <span class="skill">Pandas</span>
+            <span class="skill">NumPy</span>
+            <span class="skill">Matplotlib</span>
+            <span class="skill">Requests</span>
+            <span class="skill">BeautifulSoup</span>
+            <span class="skill">HTML</span>
+            <span class="skill">CSS</span>
+            <span class="skill">JavaScript</span>
+            <span class="skill">Git</span>
+            <span class="skill">GitHub</span>
+            <span class="skill">Data Analysis</span>
+            <span class="skill">Web Scraping</span>
+            <span class="skill">Python Automation</span>
+            <span class="skill">Bioinformatics</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     EXPERIENCE
+===================================================== -->
+
+<section id="experience">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Experience
+        </h2>
+
+        <p class="section-subtitle">
+            Internship experience and practical development work
+        </p>
+
+        <div class="experience-box">
+
+
+            <div class="experience-card">
+
+                <h3>
+                    Java Full Stack Developer Intern
+                </h3>
+
+                <h4>
+                    Blackbucks
+                </h4>
+
+                <p>
+                    Completed a Java Full Stack development internship
+                    project focused on building a Hospital Management
+                    System. The project provided practical experience
+                    in application development and Java-based programming.
+                </p>
+
             </div>
-        </div>
-    </section>
 
-    <!-- ===== Skills Section ===== -->
-    <section id="skills">
-        <div class="container">
-            <h2>Skills</h2>
-            <div class="skills-container">
-                <div class="skill">HTML - Building Structure</div>
-                <div class="skill">CSS - Styling & Responsiveness</div>
-                <div class="skill">JavaScript - Interactive UI</div>
+
+            <div class="experience-card">
+
+                <h3>
+                    Web Development Intern
+                </h3>
+
+                <h4>
+                    Prodigy Infotech
+                </h4>
+
+                <p>
+                    Completed web development internship tasks and built
+                    interactive frontend projects including Tic-Tac-Toe,
+                    Stopwatch, Navigation Bar, Responsive Landing Page
+                    and Portfolio Website using HTML, CSS and JavaScript.
+                </p>
+
             </div>
-        </div>
-    </section>
 
-    <!-- ===== Projects Section ===== -->
-    <section id="projects">
-        <div class="container">
-            <h2>Projects</h2>
-            <div class="projects-container">
-                <div class="project">
-                    <img src="https://via.placeholder.com/300x200" alt="Tic Tac Toe Project">
-                    <div class="project-content">
-                        <h3>Tic-Tac-Toe Game</h3>
-                        <p>A two-player Tic-Tac-Toe game using HTML, CSS, and JavaScript.</p>
-                    </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PROJECTS
+===================================================== -->
+
+<section id="projects">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Projects
+        </h2>
+
+        <p class="section-subtitle">
+            Academic, internship and personal projects
+        </p>
+
+
+        <div class="projects-grid">
+
+
+            <!-- PROJECT 1 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    PROJECT 01
                 </div>
-                <div class="project">
-                    <img src="https://via.placeholder.com/300x200" alt="Stopwatch Project">
-                    <div class="project-content">
-                        <h3>Stopwatch App</h3>
-                        <p>Responsive stopwatch with Start, Pause, Reset, and Lap features.</p>
-                    </div>
+
+                <h3>
+                    INC5000 Data Analysis
+                </h3>
+
+                <p>
+                    Analyzed company data to identify trends, top
+                    performing companies and useful business insights.
+                    The project includes data cleaning, analysis and
+                    visualization using Python.
+                </p>
+
+                <div class="technology">
+                    <strong>Technologies:</strong>
+                    Python, Pandas, NumPy, Matplotlib
                 </div>
-                <div class="project">
-                    <img src="https://via.placeholder.com/300x200" alt="Portfolio Project">
-                    <div class="project-content">
-                        <h3>Portfolio Website</h3>
-                        <p>Personal portfolio showcasing my skills, projects, and contact info.</p>
-                    </div>
-                </div>
+
+                <a
+                    href="https://github.com/supriyavaddadi/in5000-data-analysis"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                >
+                    View Project on GitHub →
+                </a>
+
             </div>
-        </div>
-    </section>
 
-    <!-- ===== Contact Section ===== -->
-    <section id="contact">
-        <div class="container">
-            <h2>Contact Me</h2>
-            <p>Email: <a href="mailto:supriyavaddadi009@gmail.com">supriyavaddadi009@gmail.com</a></p>
-        </div>
-    </section>
 
-    <!-- ===== Footer ===== -->
-    <footer>
-        &copy; 2026 V. Supriya | Web Developer | All Rights Reserved
-    </footer>
+            <!-- PROJECT 2 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    PROJECT 02
+                </div>
+
+                <h3>
+                    Python File Organizer
+                </h3>
+
+                <p>
+                    A Python automation tool that organizes files into
+                    appropriate folders based on their file extensions,
+                    reducing manual file organization work.
+                </p>
+
+                <div class="technology">
+                    <strong>Technologies:</strong>
+                    Python, OS Module, File Handling
+                </div>
+
+                <a
+                    href="https://github.com/supriyavaddadi/python_file_organizer"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                >
+                    View Project on GitHub →
+                </a>
+
+            </div>
+
+
+            <!-- PROJECT 3 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    PROJECT 03
+                </div>
+
+                <h3>
+                    Multi-page Web Scraper
+                </h3>
+
+                <p>
+                    Built a Python web scraper that collects book
+                    information across multiple pages and exports
+                    the collected data into a CSV file.
+                </p>
+
+                <div class="technology">
+                    <strong>Technologies:</strong>
+                    Python, Requests, BeautifulSoup, Pandas
+                </div>
+
+                <a
+                    href="https://github.com/supriyavaddadi/web_scraper"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                >
+                    View Project on GitHub →
+                </a>
+
+            </div>
+
+
+            <!-- PROJECT 4 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    PROJECT 04
+                </div>
+
+                <h3>
+                    Mammalian Gene Family Database
+                </h3>
+
+                <p>
+                    An academic bioinformatics project focused on
+                    organizing and managing mammalian gene-family
+                    information for biological data exploration.
+                </p>
+
+                <div class="technology">
+                    <strong>Category:</strong>
+                    Academic Bioinformatics Project
+                </div>
+
+                <a
+                    href="https://github.com/supriyavaddadi/Mammalian-Gene-Family-Database"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                >
+                    View Project on GitHub →
+                </a>
+
+            </div>
+
+
+            <!-- PROJECT 5 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    PROJECT 05
+                </div>
+
+                <h3>
+                    Hospital Management System
+                </h3>
+
+                <p>
+                    A Java Full Stack project developed during the
+                    Blackbucks internship, focused on managing
+                    hospital-related information and workflows.
+                </p>
+
+                <div class="technology">
+                    <strong>Category:</strong>
+                    Java Full Stack Development
+                </div>
+
+                <a
+                    href="https://github.com/supriyavaddadi/vaddadi_supriya_Hospital-Management-System"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                >
+                    View Project on GitHub →
+                </a>
+
+            </div>
+
+
+            <!-- PROJECT 6 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    PROJECT 06
+                </div>
+
+                <h3>
+                    Tic-Tac-Toe
+                </h3>
+
+                <p>
+                    An interactive browser-based Tic-Tac-Toe game
+                    developed as part of my web development internship.
+                </p>
+
+                <div class="technology">
+                    <strong>Technologies:</strong>
+                    HTML, CSS, JavaScript
+                </div>
+
+                <a
+                    href="https://github.com/supriyavaddadi/tic-tac-toe"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                >
+                    View Project on GitHub →
+                </a>
+
+            </div>
+
+
+            <!-- PROJECT 7 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    PROJECT 07
+                </div>
+
+                <h3>
+                    Stopwatch
+                </h3>
+
+                <p>
+                    A browser-based stopwatch application with
+                    interactive controls created during my web
+                    development internship.
+                </p>
+
+                <div class="technology">
+                    <strong>Technologies:</strong>
+                    HTML, CSS, JavaScript
+                </div>
+
+                <a
+                    href="https://github.com/supriyavaddadi/stop_watch_"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                >
+                    View Project on GitHub →
+                </a>
+
+            </div>
+
+
+            <!-- PROJECT 8 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    PROJECT 08
+                </div>
+
+                <h3>
+                    Navigation Bar
+                </h3>
+
+                <p>
+                    Designed and implemented a responsive navigation
+                    bar as part of my web development internship tasks.
+                </p>
+
+                <div class="technology">
+                    <strong>Technologies:</strong>
+                    HTML, CSS
+                </div>
+
+                <a
+                    href="https://github.com/supriyavaddadi/navigation_bar"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                >
+                    View Project on GitHub →
+                </a>
+
+            </div>
+
+
+            <!-- PROJECT 9 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    PROJECT 09
+                </div>
+
+                <h3>
+                    Responsive Landing Page
+                </h3>
+
+                <p>
+                    Created a responsive landing page designed to
+                    provide a clean and user-friendly experience
+                    across different screen sizes.
+                </p>
+
+                <div class="technology">
+                    <strong>Technologies:</strong>
+                    HTML, CSS, JavaScript
+                </div>
+
+                <a
+                    href="https://github.com/supriyavaddadi/Responsive-landing-page"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                >
+                    View Project on GitHub →
+                </a>
+
+            </div>
+
+
+            <!-- PROJECT 10 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    PROJECT 10
+                </div>
+
+                <h3>
+                    Portfolio Website
+                </h3>
+
+                <p>
+                    Designed and developed a personal portfolio website
+                    to showcase my skills, projects, internship experience
+                    and academic background.
+                </p>
+
+                <div class="technology">
+                    <strong>Technologies:</strong>
+                    HTML, CSS, JavaScript
+                </div>
+
+                <a
+                    href="#home"
+                    class="project-link"
+                >
+                    Current Portfolio →
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     EDUCATION
+===================================================== -->
+
+<section id="education">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Education
+        </h2>
+
+        <p class="section-subtitle">
+            Academic background
+        </p>
+
+        <div class="education-card">
+
+            <h3>
+                Bachelor of Technology – Bioinformatics
+            </h3>
+
+            <p>
+                Vignan University
+            </p>
+
+            <p>
+                Currently pursuing B.Tech
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Contact Me
+        </h2>
+
+        <p class="section-subtitle">
+            Feel free to connect with me
+        </p>
+
+        <p class="contact-text">
+            I am interested in software development opportunities,
+            internships, freelance projects and collaborations.
+        </p>
+
+        <a
+            href="mailto:supriyavaddadi009@gmail.com"
+            class="email"
+        >
+            📧 supriyavaddadi009@gmail.com
+        </a>
+
+        <div class="contact-buttons">
+
+            <a
+                href="mailto:supriyavaddadi009@gmail.com"
+                class="btn btn-primary"
+            >
+                Email Me
+            </a>
+
+            <a
+                href="https://www.linkedin.com/in/vaddadi-supriya-b8b668337/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-secondary"
+            >
+                LinkedIn
+            </a>
+
+            <a
+                href="https://github.com/supriyavaddadi"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-secondary"
+            >
+                GitHub
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <p>
+        © 2026 V. Supriya. All rights reserved.
+    </p>
+
+</footer>
+
 
 </body>
+
 </html>
